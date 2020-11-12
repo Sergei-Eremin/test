@@ -1,0 +1,119 @@
+.test-section{
+    padding: 30px 0;
+
+    .container{
+        position: relative;
+        &::before{
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 2px;
+            background-color: #FFD966;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+    }
+
+    &__item{
+        max-width: 425px;
+        padding-left: 120px;
+        position: relative;
+
+        &::before{
+            position: absolute;
+            content: '';
+            max-width: 96px;
+            width: 100%;
+            height: 0;
+            border: 2px dashed #FFD966;
+            right: -80px;
+            top: 41px;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            background-color: #FFD966;
+            right: -90px;
+            top: 30px;
+        }
+    }
+
+    &__item:nth-child(2n){
+        align-self: flex-end;
+        margin-top: -120px;
+        &::before{
+            right: auto;
+            left: -80px;
+        }
+        &::after{
+            right: auto;
+            left: -90px;
+        }
+    }
+
+    &__item:nth-child(n+2):nth-child(-n+3){
+        .main-heading::before{
+            background-image: url('../image/svg/phone.svg');
+        }
+    }
+
+    &__item:last-child{
+        .main-heading::before{
+            background-image: url('../image/svg/table.svg');
+        }
+    }
+
+    .main-heading{
+        margin-bottom: 8px;
+
+        h2{
+            font-weight: 800;
+            font-size: 70px;
+            line-height: 88px;
+    
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #676767;
+            color: transparent;
+            text-shadow: -9px -6px #ffd966;
+        }
+        svg{
+            max-width: 100px;
+            max-height: 100px;
+            position: absolute;
+            left: 10px;
+        }
+        
+    }
+
+    &__heading{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 16px;
+    }
+    &__paragraph{
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 17px;
+    }
+    &__link{
+        color: #6ACCB2;
+        font-weight: 600;
+        line-height: 22px;
+        &:hover{
+            color: #6ACCB2;
+        }
+    }
+}
